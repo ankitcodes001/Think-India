@@ -2,10 +2,80 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Home() {
+  type Speaker = {
+    id: string;
+    name: string;
+    role: string;
+    initials: string;
+    imageSrc?: string;
+    linkedinUrl?: string;
+  };
+
+  const speakers: Speaker[] = [
+    {
+      id: 'sks',
+      name: 'Sunil Kumar Sharma',
+      role: 'Hon. IT Minister, Govt. of Uttar Pradesh (Chief Guest)',
+      initials: 'SKS',
+      imageSrc: '/icons_images/sunil_sharma.jpeg',
+      linkedinUrl: undefined,
+    },
+    {
+      id: 'akc',
+      name: 'Prof. Ajit Kumar Chaturvedi',
+      role: 'Vice Chancellor, BHU',
+      initials: 'AKC',
+      imageSrc: '/icons_images/ajeet.jpeg',
+      linkedinUrl: undefined,
+    },
+    {
+      id: 'akp',
+      name: 'Prof. Amit Kumar Patra',
+      role: 'Director, IIT (BHU) (Patron)',
+      initials: 'AKP',
+      imageSrc: '/icons_images/amit_patra.jpeg',
+      linkedinUrl: undefined,
+    },
+    {
+      id: 'ma',
+      name: 'Prof. Manindra Agrawal',
+      role: 'Director, IIT Kanpur (Keynote)',
+      initials: 'MA',
+      imageSrc: '/icons_images/manidra_agrwal.jpeg',
+      linkedinUrl: undefined,
+    },
+    {
+      id: 'ora',
+      name: 'Omkar Rai',
+      role: 'Former DG, STPI',
+      initials: 'ORA',
+      imageSrc: '/icons_images/omkar_rai.jpeg',
+      linkedinUrl: undefined,
+    },
+    {
+      id: 'rks',
+      name: 'Prof. Rajeev Kumar Singh',
+      role: 'Summit Convenor • Head, Electrical Engineering, IIT (BHU)',
+      initials: 'RKS',
+      imageSrc: '/icons_images/rk_singh.jpeg',
+      linkedinUrl: undefined,
+    },
+  ];
+
   return (
     <>
       <nav className="navbar">
-        <div className="logo">अध्य’AI</div>
+        <div className="brand">
+          <Image
+            src="/icons_images/think_india_logo.png"
+            alt="Think India"
+            width={40}
+            height={40}
+            priority
+            style={{ objectFit: 'contain' }}
+          />
+          <div className="logo">अध्यAI</div>
+        </div>
         <div className="nav-links">
           <Link href="#about">About</Link>
           <Link href="#pillars">Pillars</Link>
@@ -13,7 +83,14 @@ export default function Home() {
           <Link href="#speakers">Speakers</Link>
           <Link href="#hackathon">Hackathon</Link>
         </div>
-        <Link href="#register" className="btn-primary">Reserve Seat</Link>
+        <a
+          className="btn-primary"
+          href="https://forms.gle/j25pheKrjFPvZ73t5"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Register Now
+        </a>
       </nav>
 
       <main>
@@ -22,7 +99,7 @@ export default function Home() {
           <div className="badge">Think India × IIT (BHU)</div>
           <div className="hero-title-row">
             <h1>
-              An AI Summit – <span>अध्य’AI</span>
+              An AI Summit – <span className="hero-accent">अध्यAI</span>
             </h1>
             <div className="hero-logos" aria-label="Collaboration logos">
               <div className="logo-placeholder" title="Place file in public/summit/think-india.png">
@@ -31,26 +108,24 @@ export default function Home() {
               <div className="logo-placeholder" title="Place file in public/summit/iitbhu.png">
                 IIT (BHU)
               </div>
-              <div className="hero-logo">
-                <Image
-                  src="/icons_images/meta.png"
-                  alt="Meta"
-                  width={44}
-                  height={44}
-                  style={{ objectFit: 'contain' }}
-                />
-              </div>
             </div>
           </div>
           <h2 className="hero-tagline">
             A New Chapter of Bharat’s <span>AI</span>
           </h2>
-          <p>
-            Theme: <strong>Foundations, Frontiers & Frameworks</strong> • Sub-theme: <strong>Architecting responsible AI for Bharat</strong>
-          </p>
-          <Link href="#register" className="btn-primary" style={{ fontSize: '1.1rem', padding: '1rem 2.5rem' }}>
-            Register / RSVP
-          </Link>
+          <div className="hero-meta" aria-label="Theme and sub-theme">
+            <div><strong>Foundations, Frontiers & Frameworks</strong></div>
+            <div><strong>Architecting responsible AI for Bharat</strong></div>
+          </div>
+          <a
+            className="btn-primary"
+            href="https://forms.gle/j25pheKrjFPvZ73t5"
+            target="_blank"
+            rel="noreferrer"
+            style={{ fontSize: '1.1rem', padding: '1rem 2.5rem' }}
+          >
+            Register Now
+          </a>
         </header>
 
         {/* Event Details */}
@@ -66,7 +141,7 @@ export default function Home() {
             <i>📍</i>
             <div>
               <strong>Location</strong>
-              <span>IIT (BHU), Varanasi</span>
+              <span>Dev & Vardhana Goswami Lecture Hall Complex, IIT (BHU), Varanasi</span>
             </div>
           </div>
         </div>
@@ -82,9 +157,9 @@ export default function Home() {
             <div className="content-card">
               <h3>Event Overview</h3>
               <ul className="bullets">
-                <li><strong>Title:</strong> Think India IIT (BHU) proudly presents an AI Summit – “अध्य’AI”</li>
+                <li><strong>Title:</strong> Think India IIT (BHU) proudly presents an AI Summit – “अध्यAI”</li>
                 <li><strong>Tagline:</strong> A New Chapter of Bharat’s AI</li>
-                <li><strong>Collaboration:</strong> Think India × IIT (BHU) (Meta collaboration on cover)</li>
+                <li><strong>Collaboration:</strong> Think India × IIT (BHU)</li>
               </ul>
             </div>
             <div className="content-card">
@@ -139,7 +214,10 @@ export default function Home() {
 
           <div className="timeline">
             <div className="timeline-item">
-              <div className="timeline-time">09:00 – 10:00</div>
+              <div className="timeline-time">
+                <span className="timeline-event">Event 1</span>
+                <span className="timeline-range">09:00 AM – 10:00 AM</span>
+              </div>
               <div className="timeline-body">
                 <h3>Inaugural Session</h3>
                 <p className="muted">Keynote on national AI strategy</p>
@@ -147,14 +225,20 @@ export default function Home() {
               </div>
             </div>
             <div className="timeline-item">
-              <div className="timeline-time">10:00 – 10:30</div>
+              <div className="timeline-time">
+                <span className="timeline-event">Event 2</span>
+                <span className="timeline-range">10:00 AM – 10:30 AM</span>
+              </div>
               <div className="timeline-body">
                 <h3>High Tea</h3>
                 <p className="muted">Informal interaction with keynote speakers</p>
               </div>
             </div>
             <div className="timeline-item">
-              <div className="timeline-time">10:30 – 11:30</div>
+              <div className="timeline-time">
+                <span className="timeline-event">Event 3</span>
+                <span className="timeline-range">10:30 AM – 11:30 AM</span>
+              </div>
               <div className="timeline-body">
                 <h3>Keynote Session</h3>
                 <p><strong>Speaker:</strong> Prof. Manindra Agrawal (Director, IIT Kanpur)</p>
@@ -162,36 +246,42 @@ export default function Home() {
               </div>
             </div>
             <div className="timeline-item">
-              <div className="timeline-time">11:30 – 13:30</div>
+              <div className="timeline-time">
+                <span className="timeline-event">Event 4</span>
+                <span className="timeline-range">11:30 AM – 01:30 PM</span>
+              </div>
               <div className="timeline-body">
                 <h3>Tech Hackathon & Problem Solving</h3>
-                <p className="muted"><strong>Powered by Meta AI</strong> • Hands-on AI solution building for societal challenges</p>
+                <p className="muted">Hands-on AI solution building for societal challenges</p>
               </div>
             </div>
             <div className="timeline-item">
-              <div className="timeline-time">13:30 – 14:30</div>
+              <div className="timeline-time">
+                <span className="timeline-event">Event 5</span>
+                <span className="timeline-range">01:30 PM – 02:30 PM</span>
+              </div>
               <div className="timeline-body">
                 <h3>Networking Lunch</h3>
                 <p className="muted">Informal discussions & ecosystem networking</p>
               </div>
             </div>
             <div className="timeline-item">
-              <div className="timeline-time">14:30 – 16:00</div>
+              <div className="timeline-time">
+                <span className="timeline-event">Event 6</span>
+                <span className="timeline-range">04:00 PM – 05:00 PM</span>
+              </div>
               <div className="timeline-body">
-                <h3>AI in Policy and Ethics</h3>
+                <h3>AI in Medical, Law & Agriculture — Panel Discussion</h3>
+                <p className="muted">Focus: health • agriculture • justice sectors</p>
                 <p className="muted">Regulatory frameworks • Algorithmic accountability • Ethical safeguards</p>
                 <p><strong>Goal:</strong> Build a “Responsible AI Roadmap” for Bharat</p>
               </div>
             </div>
             <div className="timeline-item">
-              <div className="timeline-time">16:00 – 17:00</div>
-              <div className="timeline-body">
-                <h3>AI in Medical, Law & Agriculture — Panel Discussion</h3>
-                <p className="muted">Focus: health • agriculture • justice sectors</p>
+              <div className="timeline-time">
+                <span className="timeline-event">Event 7</span>
+                <span className="timeline-range">05:30 PM - 7:00 PM</span>
               </div>
-            </div>
-            <div className="timeline-item">
-              <div className="timeline-time">17:30+</div>
               <div className="timeline-body">
                 <h3>Thanksgiving & Closing</h3>
                 <p className="muted">Formal acknowledgments • Closing remarks on the Responsible AI Roadmap</p>
@@ -205,75 +295,34 @@ export default function Home() {
           <h2 className="section-title">Speakers & Participants</h2>
           
           <div className="speakers-grid">
-            <div className="speaker-card">
-              <div className="speaker-icon"><span className="speaker-initials">SKS</span></div>
-              <h3>Sunil Kumar Sharma</h3>
-              <p>Hon. IT Minister, Govt. of Uttar Pradesh (Chief Guest)</p>
-            </div>
+            {speakers.map((speaker) => (
+              <div key={speaker.id} className="speaker-card speaker-card--profile">
+                <div
+                  className="speaker-cover"
+                  style={speaker.imageSrc ? { backgroundImage: `url('${speaker.imageSrc}')` } : undefined}
+                  aria-label={`${speaker.name} photo`}
+                >
+                  {!speaker.imageSrc ? (
+                    <div className="speaker-cover-fallback" aria-hidden="true">
+                      <div className="speaker-cover-initials">{speaker.initials}</div>
+                    </div>
+                  ) : null}
+                </div>
 
-            <div className="speaker-card">
-              <div className="speaker-icon"><span className="speaker-initials">AKP</span></div>
-              <h3>Prof. Amit Kumar Patra</h3>
-              <p>Director, IIT (BHU) (Patron)</p>
-            </div>
-
-            <div className="speaker-card">
-              <div className="speaker-icon"><span className="speaker-initials">RKS</span></div>
-              <h3>Prof. Rajeev Kumar Singh</h3>
-              <p>Summit Convenor • Head, Electrical Engineering, IIT (BHU)</p>
-            </div>
-
-            <div className="speaker-card">
-              <div className="speaker-icon"><span className="speaker-initials">ORA</span></div>
-              <h3>Omkar Rai</h3>
-              <p>Former DG, STPI</p>
-            </div>
-
-            <div className="speaker-card">
-              <div className="speaker-icon"><span className="speaker-initials">MA</span></div>
-              <h3>Prof. Manindra Agrawal</h3>
-              <p>Director, IIT Kanpur (Keynote)</p>
-            </div>
-
-            <div className="speaker-card">
-              <div className="speaker-icon"><span className="speaker-initials">SS</span></div>
-              <h3>Sanjeev Sanyal</h3>
-              <p>Member, EAC-PM • Economic Advisor to PM, Govt. of India</p>
-            </div>
-
-            <div className="speaker-card">
-              <div className="speaker-icon"><span className="speaker-initials">VKS</span></div>
-              <h3>Prof. Vivek Kumar Singh</h3>
-              <p>Senior Advisor to Govt. of India — Science & Technology</p>
-            </div>
-
-            <div className="speaker-card">
-              <div className="speaker-icon"><span className="speaker-initials">AKC</span></div>
-              <h3>Prof. Ajit Kumar Chaturvedi</h3>
-              <p>Vice Chancellor, BHU</p>
-            </div>
-
-            <div className="speaker-card">
-              <div className="speaker-icon"><span className="speaker-initials">APS</span></div>
-              <h3>Abhay Pratap Singh</h3>
-              <p>National Secretary, ABVP</p>
-            </div>
-
-            <div className="speaker-card meta">
-              <div className="speaker-icon">
-                <Image src="/icons_images/meta.png" alt="Meta" width={40} height={40} style={{ objectFit: 'contain' }} />
+                <div className="speaker-content">
+                  <h3>{speaker.name}</h3>
+                  <p>{speaker.role}</p>
+                </div>
               </div>
-              <h3>Meta AI</h3>
-              <p>Industry Experts (Hackathon)</p>
-            </div>
+            ))}
 
-            <div className="speaker-card sarvam">
-              <div className="speaker-icon">
-                <Image src="/icons_images/sarvam.jpeg" alt="Sarvam AI" width={40} height={40} style={{ objectFit: 'cover', borderRadius: '50%' }} />
-              </div>
-              <h3>Sarvam AI</h3>
-              <p>Industry participation</p>
+            <div className="speaker-card speaker-card--coming">
+              <div className="speaker-icon speaker-icon--coming" aria-hidden="true">+</div>
+              <h3>More Guests Coming</h3>
+              <p>Distinguished guests and domain experts will be announced soon.</p>
             </div>
+          
+
           </div>
         </section>
 
@@ -282,7 +331,7 @@ export default function Home() {
           <h2 className="section-title">Tech Hackathon</h2>
           <div className="cards-grid">
             <div className="content-card">
-              <h3>Powered by Meta AI</h3>
+              <h3>Collaborative Build Session</h3>
               <p>
                 Hands-on AI solution building for societal challenges — aimed at young innovators to develop responsible AI solutions for Bharat.
               </p>
@@ -297,27 +346,10 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Register */}
-        <section id="register" className="content-section">
-          <h2 className="section-title">Register / RSVP</h2>
-          <div className="register-card">
-            <p className="section-subtitle">
-              Share the registration link (Google Form / website) and I’ll wire the button to it.
-            </p>
-            <div className="register-actions">
-              <a className="btn-primary" href="#" aria-disabled="true">
-                Registration Link (TBD)
-              </a>
-              <p className="muted">
-                Organizers: Think India • IIT (BHU)
-              </p>
-            </div>
-          </div>
-        </section>
       </main>
 
       <footer>
-        <p>&copy; {new Date().getFullYear()} Think India IIT (BHU) • AI Summit “अध्य’AI”. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Think India IIT (BHU) • AI Summit “अध्यAI”. All rights reserved.</p>
       </footer>
     </>
   );

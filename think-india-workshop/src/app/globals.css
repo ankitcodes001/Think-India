@@ -2,15 +2,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;500;600&display=swap');
 
 :root {
-  --bg-base: #050505;
+  --bg-base: #ffffff;
   --bg-glow: #1a0b2e;
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
+  --text-main: #0f172a;
+  --text-muted: #475569;
   --accent-purple: #c084fc;
   --accent-blue: #38bdf8;
   --accent-green: #34d399;
-  --card-bg: rgba(255, 255, 255, 0.02);
-  --card-border: rgba(255, 255, 255, 0.06);
+  --card-bg: rgba(2, 6, 23, 0.04);
+  --card-border: rgba(2, 6, 23, 0.10);
   --font-h: 'Outfit', sans-serif;
   --font-p: 'Inter', sans-serif;
 }
@@ -34,6 +34,14 @@ body {
   color: var(--text-muted);
 }
 
+.hero-accent {
+  background: linear-gradient(135deg, #5E0006 0%, #f97316 45%, #38bdf8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+
 /* Ambient Background Glow */
 body::before {
   content: '';
@@ -43,7 +51,7 @@ body::before {
   width: 50vw;
   height: 50vw;
   background: radial-gradient(circle, var(--accent-purple) 0%, transparent 60%);
-  opacity: 0.15;
+  opacity: 0.12;
   filter: blur(100px);
   z-index: -1;
   animation: float-glow 20s infinite alternate ease-in-out;
@@ -74,7 +82,7 @@ body::after {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem 4rem;
-  background: rgba(5, 5, 5, 0.6);
+  background: rgba(255, 255, 255, 0.72);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--card-border);
   position: sticky;
@@ -82,12 +90,18 @@ body::after {
   z-index: 100;
 }
 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
 .logo {
   font-family: var(--font-h);
   font-weight: 800;
   font-size: 1.5rem;
   letter-spacing: -0.5px;
-  background: linear-gradient(135deg, #fff, var(--accent-blue));
+  background: linear-gradient(135deg, var(--text-main), var(--accent-blue));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -133,6 +147,35 @@ body::after {
   padding: 8rem 2rem 4rem;
   max-width: 1000px;
   margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/college.jpeg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.85;
+  transform: scale(1.03);
+  z-index: -2;
+  pointer-events: none;
+  filter: saturate(1.2) contrast(1.08) brightness(1.02);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.42)),
+    radial-gradient(circle at 20% 10%, rgba(192, 132, 252, 0.14), transparent 55%),
+    radial-gradient(circle at 85% 30%, rgba(56, 189, 248, 0.12), transparent 60%);
+  z-index: -1;
+  pointer-events: none;
 }
 
 .hero-title-row {
@@ -152,12 +195,12 @@ body::after {
 .logo-placeholder {
   padding: 0.55rem 0.85rem;
   border-radius: 999px;
-  border: 1px dashed rgba(255, 255, 255, 0.18);
-  color: rgba(248, 250, 252, 0.85);
+  border: 1px dashed rgba(2, 6, 23, 0.18);
+  color: rgba(15, 23, 42, 0.85);
   font-family: var(--font-h);
   font-weight: 700;
   font-size: 0.9rem;
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(255, 255, 255, 0.65);
   white-space: nowrap;
 }
 
@@ -166,7 +209,7 @@ body::after {
   height: 56px;
   border-radius: 14px;
   border: 1px solid var(--card-border);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.75);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -175,9 +218,9 @@ body::after {
 .badge {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background: rgba(56, 189, 248, 0.1);
-  border: 1px solid rgba(56, 189, 248, 0.3);
-  color: var(--accent-blue);
+  background: rgba(56, 189, 248, 0.18);
+  border: 1px solid rgba(56, 189, 248, 0.38);
+  color: #0284c7;
   border-radius: 50px;
   font-size: 0.85rem;
   font-weight: 600;
@@ -192,7 +235,7 @@ body::after {
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  background: linear-gradient(to right, #fff, var(--text-muted));
+  background: linear-gradient(to right, var(--text-main), var(--text-muted));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -226,6 +269,20 @@ body::after {
   line-height: 1.6;
 }
 
+.hero-meta {
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  color: var(--text-main);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.hero-meta strong {
+  color: var(--text-main);
+}
+
 /* Speakers Section */
 .speakers-section {
   padding: 5rem 2rem;
@@ -257,17 +314,79 @@ body::after {
   cursor: pointer;
 }
 
+.speaker-card--profile {
+  padding: 0;
+  overflow: hidden;
+  text-align: left;
+  cursor: default;
+}
+
+.speaker-cover {
+  position: relative;
+  height: 170px;
+  background: rgba(2, 6, 23, 0.06);
+  background-size: cover;
+  background-position: center;
+}
+
+.speaker-cover::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.00), rgba(255, 255, 255, 0.14));
+  pointer-events: none;
+}
+
+.speaker-cover-fallback {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  z-index: 1;
+}
+
+.speaker-cover-initials {
+  width: 76px;
+  height: 76px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(2, 6, 23, 0.12);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-h);
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: rgba(15, 23, 42, 0.88);
+}
+
+.speaker-content {
+  padding: 1.15rem 1.25rem 1.25rem;
+}
+
+.speaker-card--profile h3 {
+  font-family: var(--font-h);
+  font-size: 1.25rem;
+  margin-bottom: 0.35rem;
+}
+
+.speaker-card--profile p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
 .speaker-card:hover {
   transform: translateY(-10px);
-  border-color: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  border-color: rgba(2, 6, 23, 0.18);
+  box-shadow: 0 18px 40px rgba(2, 6, 23, 0.12);
 }
 
 .speaker-icon {
   width: 70px;
   height: 70px;
   margin: 0 auto 1.5rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(2, 6, 23, 0.05);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -276,19 +395,26 @@ body::after {
   position: relative;
 }
 
+.speaker-card--coming {
+  border-style: dashed;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.speaker-icon--coming {
+  border: 1px dashed rgba(2, 6, 23, 0.22);
+  background: rgba(255, 255, 255, 0.85);
+  color: rgba(2, 6, 23, 0.65);
+  font-family: var(--font-h);
+  font-weight: 900;
+}
+
 .speaker-initials {
   font-family: var(--font-h);
   font-weight: 800;
   letter-spacing: 1px;
   font-size: 1.05rem;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(15, 23, 42, 0.92);
 }
-
-/* Logos specific colors */
-.speaker-card.meta:hover .speaker-icon { box-shadow: 0 0 20px rgba(6, 104, 225, 0.5); }
-.speaker-card.google:hover .speaker-icon { box-shadow: 0 0 20px rgba(234, 67, 53, 0.5); }
-.speaker-card.openai:hover .speaker-icon { box-shadow: 0 0 20px rgba(16, 163, 127, 0.5); }
-.speaker-card.sarvam:hover .speaker-icon { box-shadow: 0 0 20px rgba(245, 158, 11, 0.5); }
 
 .speaker-card h3 {
   font-family: var(--font-h);
@@ -450,7 +576,7 @@ body::after {
 
 .timeline-item {
   display: grid;
-  grid-template-columns: 160px 1fr;
+  grid-template-columns: 260px 1fr;
   gap: 1.25rem;
   align-items: start;
   background: var(--card-bg);
@@ -464,7 +590,28 @@ body::after {
   font-family: var(--font-h);
   font-weight: 800;
   letter-spacing: 0.2px;
-  color: rgba(248, 250, 252, 0.9);
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 0.45rem 0.7rem;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.timeline-event {
+  white-space: nowrap;
+}
+
+.timeline-range {
+  white-space: nowrap;
+  color: rgba(15, 23, 42, 0.8);
+  justify-self: end;
+  font-size: 0.95rem;
 }
 
 .timeline-body h3 {
@@ -522,4 +669,6 @@ footer {
   .nav-links { display: none; }
   .info-section { flex-direction: column; }
   .timeline-item { grid-template-columns: 1fr; }
+  .timeline-time { grid-template-columns: 1fr; justify-items: start; }
+  .timeline-range { white-space: normal; justify-self: start; }
 }

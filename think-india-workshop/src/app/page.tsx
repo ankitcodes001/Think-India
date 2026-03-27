@@ -208,146 +208,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Schedule */}
-        <section id="schedule" className="content-section">
-          <h2 className="section-title">Full Schedule</h2>
-          <p className="section-subtitle">April 8, 2026 • IIT (BHU), Varanasi</p>
-
-          <div className="timeline">
-            <div className="timeline-item">
-              <div className="timeline-time">
-                <span className="timeline-event">Event 1</span>
-                <span className="timeline-range">09:00 AM – 10:00 AM</span>
-              </div>
-              <div className="timeline-body">
-                <h3>Inaugural Session</h3>
-                <p className="muted">Keynote on national AI strategy</p>
-                <p><strong>Speakers:</strong> Shri Sunil Kumar Sharma • Prof. Amit Kumar Patra</p>
-              </div>
-            </div>
-            <div className="timeline-item">
-              <div className="timeline-time">
-                <span className="timeline-event">Event 2</span>
-                <span className="timeline-range">10:00 AM – 10:30 AM</span>
-              </div>
-              <div className="timeline-body">
-                <h3>High Tea</h3>
-                <p className="muted">Informal interaction with keynote speakers</p>
-              </div>
-            </div>
-            <div className="timeline-item">
-              <div className="timeline-time">
-                <span className="timeline-event">Event 3</span>
-                <span className="timeline-range">10:30 AM – 11:30 AM</span>
-              </div>
-              <div className="timeline-body">
-                <h3>Keynote Session</h3>
-                <p><strong>Speaker:</strong> Prof. Manindra Agrawal (Director, IIT Kanpur)</p>
-                <p className="muted">Topic: threat detection & privacy concerns</p>
-              </div>
-            </div>
-            <div className="timeline-item">
-              <div className="timeline-time">
-                <span className="timeline-event">Event 4</span>
-                <span className="timeline-range">11:30 AM – 01:30 PM</span>
-              </div>
-              <div className="timeline-body">
-                <h3>Tech Hackathon & Problem Solving</h3>
-                <p className="muted">Hands-on AI solution building for societal challenges</p>
-              </div>
-            </div>
-            <div className="timeline-item">
-              <div className="timeline-time">
-                <span className="timeline-event">Event 5</span>
-                <span className="timeline-range">01:30 PM – 02:30 PM</span>
-              </div>
-              <div className="timeline-body">
-                <h3>Networking Lunch</h3>
-                <p className="muted">Informal discussions & ecosystem networking</p>
-              </div>
-            </div>
-            <div className="timeline-item">
-              <div className="timeline-time">
-                <span className="timeline-event">Event 6</span>
-                <span className="timeline-range">04:00 PM – 05:00 PM</span>
-              </div>
-              <div className="timeline-body">
-                <h3>AI in Medical, Law & Agriculture — Panel Discussion</h3>
-                <p className="muted">Focus: health • agriculture • justice sectors</p>
-                <p className="muted">Regulatory frameworks • Algorithmic accountability • Ethical safeguards</p>
-                <p><strong>Goal:</strong> Build a “Responsible AI Roadmap” for Bharat</p>
-              </div>
-            </div>
-            <div className="timeline-item">
-              <div className="timeline-time">
-                <span className="timeline-event">Event 7</span>
-                <span className="timeline-range">05:30 PM - 7:00 PM</span>
-              </div>
-              <div className="timeline-body">
-                <h3>Thanksgiving & Closing</h3>
-                <p className="muted">Formal acknowledgments • Closing remarks on the Responsible AI Roadmap</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Speakers Section */}
-        <section id="speakers" className="speakers-section">
-          <h2 className="section-title">Speakers & Participants</h2>
-          
-          <div className="speakers-grid">
-            {speakers.map((speaker) => (
-              <div key={speaker.id} className="speaker-card speaker-card--profile">
-                <div
-                  className="speaker-cover"
-                  style={speaker.imageSrc ? { backgroundImage: `url('${speaker.imageSrc}')` } : undefined}
-                  aria-label={`${speaker.name} photo`}
-                >
-                  {!speaker.imageSrc ? (
-                    <div className="speaker-cover-fallback" aria-hidden="true">
-                      <div className="speaker-cover-initials">{speaker.initials}</div>
-                    </div>
-                  ) : null}
-                </div>
-
-                <div className="speaker-content">
-                  <h3>{speaker.name}</h3>
-                  <p>{speaker.role}</p>
-                </div>
-              </div>
-            ))}
-
-            <div className="speaker-card speaker-card--coming">
-              <div className="speaker-icon speaker-icon--coming" aria-hidden="true">+</div>
-              <h3>More Guests Coming</h3>
-              <p>Distinguished guests and domain experts will be announced soon.</p>
-            </div>
-          
-
-          </div>
-        </section>
-
-        {/* Hackathon */}
-        <section id="hackathon" className="content-section">
-          <h2 className="section-title">Tech Hackathon</h2>
-          <div className="cards-grid">
-            <div className="content-card">
-              <h3>Collaborative Build Session</h3>
-              <p>
-                Hands-on AI solution building for societal challenges — aimed at young innovators to develop responsible AI solutions for Bharat.
-              </p>
-              <p className="muted">Time: 11:30 AM – 01:30 PM</p>
-            </div>
-            <div className="content-card">
-              <h3>Outcome</h3>
-              <p>
-                A practical showcase of applied AI across priority sectors, aligned to the summit’s pillars and the “Responsible AI Roadmap” goal.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Problem Statements */}
+        {/* PROBLEMS_PLACEHOLDER MOVED UP */}
         <section id="problems" className="content-section">
           <h2 className="section-title">Hackathon Problem Statements</h2>
           <p className="section-subtitle">
@@ -598,6 +459,145 @@ export default function Home() {
               </div>
             </details>
 
+          </div>
+        </section>
+
+        {/* Schedule */}
+        <section id="schedule" className="content-section">
+          <h2 className="section-title">Full Schedule</h2>
+          <p className="section-subtitle">April 8, 2026 • IIT (BHU), Varanasi</p>
+
+          <div className="timeline">
+            <div className="timeline-item">
+              <div className="timeline-time">
+                <span className="timeline-event">Event 1</span>
+                <span className="timeline-range">09:00 AM – 10:00 AM</span>
+              </div>
+              <div className="timeline-body">
+                <h3>Inaugural Session</h3>
+                <p className="muted">Keynote on national AI strategy</p>
+                <p><strong>Speakers:</strong> Shri Sunil Kumar Sharma • Prof. Amit Kumar Patra</p>
+              </div>
+            </div>
+            <div className="timeline-item">
+              <div className="timeline-time">
+                <span className="timeline-event">Event 2</span>
+                <span className="timeline-range">10:00 AM – 10:30 AM</span>
+              </div>
+              <div className="timeline-body">
+                <h3>High Tea</h3>
+                <p className="muted">Informal interaction with keynote speakers</p>
+              </div>
+            </div>
+            <div className="timeline-item">
+              <div className="timeline-time">
+                <span className="timeline-event">Event 3</span>
+                <span className="timeline-range">10:30 AM – 11:30 AM</span>
+              </div>
+              <div className="timeline-body">
+                <h3>Keynote Session</h3>
+                <p><strong>Speaker:</strong> Prof. Manindra Agrawal (Director, IIT Kanpur)</p>
+                <p className="muted">Topic: threat detection & privacy concerns</p>
+              </div>
+            </div>
+            <div className="timeline-item">
+              <div className="timeline-time">
+                <span className="timeline-event">Event 4</span>
+                <span className="timeline-range">11:30 AM – 01:30 PM</span>
+              </div>
+              <div className="timeline-body">
+                <h3>Tech Hackathon & Problem Solving</h3>
+                <p className="muted">Hands-on AI solution building for societal challenges</p>
+              </div>
+            </div>
+            <div className="timeline-item">
+              <div className="timeline-time">
+                <span className="timeline-event">Event 5</span>
+                <span className="timeline-range">01:30 PM – 02:30 PM</span>
+              </div>
+              <div className="timeline-body">
+                <h3>Networking Lunch</h3>
+                <p className="muted">Informal discussions & ecosystem networking</p>
+              </div>
+            </div>
+            <div className="timeline-item">
+              <div className="timeline-time">
+                <span className="timeline-event">Event 6</span>
+                <span className="timeline-range">04:00 PM – 05:00 PM</span>
+              </div>
+              <div className="timeline-body">
+                <h3>AI in Medical, Law & Agriculture — Panel Discussion</h3>
+                <p className="muted">Focus: health • agriculture • justice sectors</p>
+                <p className="muted">Regulatory frameworks • Algorithmic accountability • Ethical safeguards</p>
+                <p><strong>Goal:</strong> Build a “Responsible AI Roadmap” for Bharat</p>
+              </div>
+            </div>
+            <div className="timeline-item">
+              <div className="timeline-time">
+                <span className="timeline-event">Event 7</span>
+                <span className="timeline-range">05:30 PM - 7:00 PM</span>
+              </div>
+              <div className="timeline-body">
+                <h3>Thanksgiving & Closing</h3>
+                <p className="muted">Formal acknowledgments • Closing remarks on the Responsible AI Roadmap</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Speakers Section */}
+        <section id="speakers" className="speakers-section">
+          <h2 className="section-title">Speakers & Participants</h2>
+          
+          <div className="speakers-grid">
+            {speakers.map((speaker) => (
+              <div key={speaker.id} className="speaker-card speaker-card--profile">
+                <div
+                  className="speaker-cover"
+                  style={speaker.imageSrc ? { backgroundImage: `url('${speaker.imageSrc}')` } : undefined}
+                  aria-label={`${speaker.name} photo`}
+                >
+                  {!speaker.imageSrc ? (
+                    <div className="speaker-cover-fallback" aria-hidden="true">
+                      <div className="speaker-cover-initials">{speaker.initials}</div>
+                    </div>
+                  ) : null}
+                </div>
+
+                <div className="speaker-content">
+                  <h3>{speaker.name}</h3>
+                  <p>{speaker.role}</p>
+                </div>
+              </div>
+            ))}
+
+            <div className="speaker-card speaker-card--coming">
+              <div className="speaker-icon speaker-icon--coming" aria-hidden="true">+</div>
+              <h3>More Guests Coming</h3>
+              <p>Distinguished guests and domain experts will be announced soon.</p>
+            </div>
+          
+
+          </div>
+        </section>
+
+        {/* Hackathon */}
+        <section id="hackathon" className="content-section">
+          <h2 className="section-title">Tech Hackathon</h2>
+          <div className="cards-grid">
+            <div className="content-card">
+              <h3>Collaborative Build Session</h3>
+              <p>
+                Hands-on AI solution building for societal challenges — aimed at young innovators to develop responsible AI solutions for Bharat.
+              </p>
+              <p className="muted">Time: 11:30 AM – 01:30 PM</p>
+            </div>
+            <div className="content-card">
+              <h3>Outcome</h3>
+              <p>
+                A practical showcase of applied AI across priority sectors, aligned to the summit’s pillars and the “Responsible AI Roadmap” goal.
+              </p>
+            </div>
           </div>
         </section>
 

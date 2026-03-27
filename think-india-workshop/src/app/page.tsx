@@ -82,6 +82,7 @@ export default function Home() {
           <Link href="#schedule">Schedule</Link>
           <Link href="#speakers">Speakers</Link>
           <Link href="#hackathon">Hackathon</Link>
+          <Link href="#problems">Problems</Link>
         </div>
         <a
           className="btn-primary"
@@ -343,6 +344,260 @@ export default function Home() {
                 A practical showcase of applied AI across priority sectors, aligned to the summit’s pillars and the “Responsible AI Roadmap” goal.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Problem Statements */}
+        <section id="problems" className="content-section">
+          <h2 className="section-title">Hackathon Problem Statements</h2>
+          <p className="section-subtitle">
+            5 problem statements across healthcare, agriculture, security, and cultural heritage. Click any card to expand details.
+          </p>
+
+          <div className="problems-pdf-bar">
+            <span className="problems-pdf-label">Full problem statements document</span>
+            <a
+              className="btn-primary problems-pdf-btn"
+              href="/Problem Statements AI Summit Hackathon.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Download PDF ↓
+            </a>
+          </div>
+
+          <div className="problems-list">
+
+            {/* PS1 */}
+            <details className="problem-item">
+              <summary className="problem-summary">
+                <div className="problem-meta">
+                  <span className="problem-number">01</span>
+                  <div className="problem-header-text">
+                    <span className="problem-domain problem-domain--health">Healthcare</span>
+                    <h3>Unified Lifetime Medical History via Telemedicine (AI-Enabled)</h3>
+                  </div>
+                </div>
+                <span className="problem-chevron" aria-hidden="true">›</span>
+              </summary>
+              <div className="problem-body">
+                <p>Design and build an <strong>AI-powered system</strong> that creates, maintains, and enhances a unified lifetime medical history for patients through telemedicine interactions — structuring unstructured consultations into persistent longitudinal records.</p>
+                <div className="problem-cols">
+                  <div>
+                    <h4>Key Requirements</h4>
+                    <ul className="bullets">
+                      <li>Patient profile creation & management</li>
+                      <li>Teleconsultation simulation (multiple visits)</li>
+                      <li>Persistent longitudinal medical history</li>
+                      <li>Integrated AI pipeline (mandatory)</li>
+                      <li>3–4 consultations per patient demonstrated</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>AI Features Required</h4>
+                    <ul className="bullets">
+                      <li>Automated summarization (text or voice)</li>
+                      <li>Extraction of symptoms, medications, diagnosis</li>
+                      <li>Cumulative patient history summary</li>
+                      <li>Pattern detection across visits</li>
+                      <li>Use free LLM API (e.g. Google Gemini)</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>Evaluation (S = f(F, A, L, U, P, I, D))</h4>
+                    <ul className="bullets">
+                      <li><strong>F</strong> — Functionality & Completeness</li>
+                      <li><strong>A</strong> — AI Depth & Effectiveness</li>
+                      <li><strong>L</strong> — Longitudinal Intelligence</li>
+                      <li><strong>U</strong> — Usability & Experience</li>
+                      <li><strong>P</strong> — Practicality & Real-World Fit</li>
+                      <li><strong>I</strong> — Innovation & Design Thinking</li>
+                      <li><strong>D</strong> — Demo & Communication</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="problem-success"><strong>Success:</strong> A patient undergoes multiple teleconsultations, AI processes each to extract and summarize key medical information, building a continuously evolving intelligent medical history.</p>
+              </div>
+            </details>
+
+            {/* PS2 */}
+            <details className="problem-item">
+              <summary className="problem-summary">
+                <div className="problem-meta">
+                  <span className="problem-number">02</span>
+                  <div className="problem-header-text">
+                    <span className="problem-domain problem-domain--agri">Agriculture</span>
+                    <h3>Innovating App-Based Solutions for Sustainable Agriculture</h3>
+                  </div>
+                </div>
+                <span className="problem-chevron" aria-hidden="true">›</span>
+              </summary>
+              <div className="problem-body">
+                <p>Design and develop an innovative mobile or web-based <strong>AgriTech prototype</strong> that connects farmers, buyers, vendors, and government agencies while enabling data-driven agricultural decision-making — integrating smart farming, predictive analytics, and digital marketplaces.</p>
+                <div className="problem-cols">
+                  <div>
+                    <h4>Expected Features</h4>
+                    <ul className="bullets">
+                      <li>Smart Farm Advisory System (weather, soil, pest alerts)</li>
+                      <li>Digital Farm-to-Market Platform with price discovery</li>
+                      <li>AI/ML predictive insights (crop prices, yields)</li>
+                      <li>IoT & sensor integration (optional)</li>
+                      <li>Regional language support (Hindi / Bhojpuri)</li>
+                      <li>Government scheme awareness integration</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>Evaluation Criteria</h4>
+                    <ul className="bullets">
+                      <li>Innovation and originality of solution</li>
+                      <li>Practical applicability in rural environments</li>
+                      <li>Integration of AI, IoT, or data analytics</li>
+                      <li>User experience & accessibility for farmers</li>
+                      <li>Potential scalability and real-world impact</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="problem-success"><strong>Goal:</strong> Build scalable, farmer-centric digital solutions that leverage AI, IoT, and mobile technologies to strengthen the agricultural value chain across India.</p>
+              </div>
+            </details>
+
+            {/* PS3 */}
+            <details className="problem-item">
+              <summary className="problem-summary">
+                <div className="problem-meta">
+                  <span className="problem-number">03</span>
+                  <div className="problem-header-text">
+                    <span className="problem-domain problem-domain--security">Security</span>
+                    <h3>AI for Missing Persons Identification & Human Trafficking Prevention</h3>
+                  </div>
+                </div>
+                <span className="problem-chevron" aria-hidden="true">›</span>
+              </summary>
+              <div className="problem-body">
+                <p>Build an <strong>AI-powered platform</strong> that helps identify, track, and assist in the recovery of missing persons by aggregating and analyzing multimodal data sources — providing actionable insights such as possible sightings, match probabilities, alerts, and location patterns.</p>
+                <div className="problem-cols">
+                  <div>
+                    <h4>Mandatory AI Features</h4>
+                    <ul className="bullets">
+                      <li>Face matching (missing person vs CCTV/public images)</li>
+                      <li>Person detection in images/videos</li>
+                      <li>NLP-based extraction from text reports</li>
+                      <li>Ranking/scoring of possible matches</li>
+                      <li>Linking multiple sightings across time/locations</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>Ethics & Constraints</h4>
+                    <ul className="bullets">
+                      <li>Use only synthetic/proxy datasets</li>
+                      <li>Avoid misuse of facial recognition</li>
+                      <li>Include access control & anonymization safeguards</li>
+                      <li>Systems assist authorities — not enable surveillance misuse</li>
+                      <li>No real identifiable personal data permitted</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>Evaluation (S = f(F, A, M, P, E, I, D))</h4>
+                    <ul className="bullets">
+                      <li><strong>F</strong> — Functionality & System Completeness</li>
+                      <li><strong>A</strong> — AI Effectiveness & Accuracy</li>
+                      <li><strong>M</strong> — Multimodal Intelligence</li>
+                      <li><strong>P</strong> — Practicality & Real-World Fit</li>
+                      <li><strong>E</strong> — Ethical AI & Responsibility</li>
+                      <li><strong>I</strong> — Innovation & Design Thinking</li>
+                      <li><strong>D</strong> — Demo & Communication</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="problem-success"><strong>Success:</strong> A missing person's profile is created, the system analyzes incoming data, identifies potential matches using AI, and presents actionable insights to assist authorities.</p>
+              </div>
+            </details>
+
+            {/* PS4 */}
+            <details className="problem-item">
+              <summary className="problem-summary">
+                <div className="problem-meta">
+                  <span className="problem-number">04</span>
+                  <div className="problem-header-text">
+                    <span className="problem-domain problem-domain--agri">Agriculture</span>
+                    <h3>Plant Disease Detection Using Leaf Images</h3>
+                  </div>
+                </div>
+                <span className="problem-chevron" aria-hidden="true">›</span>
+              </summary>
+              <div className="problem-body">
+                <p>Develop an <strong>AI-based system</strong> that detects plant diseases from leaf images while addressing real-world challenges. Classify plant leaf images into healthy and diseased classes, and implement at least one innovation track.</p>
+                <div className="problem-cols">
+                  <div>
+                    <h4>Innovation Tracks</h4>
+                    <ul className="bullets">
+                      <li><strong>Track A – Robustness:</strong> Handle noisy, blurred, varied images</li>
+                      <li><strong>Track B – Explainability:</strong> Make predictions interpretable</li>
+                      <li><strong>Track C – Lightweight AI:</strong> Deploy on smartphones/edge devices</li>
+                      <li><strong>Track D – Synthetic Data:</strong> Address data scarcity via generative models</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>Deliverables</h4>
+                    <ul className="bullets">
+                      <li>Code Repository</li>
+                      <li>Report and Presentation Slides</li>
+                      <li>Demo (Android app recommended)</li>
+                      <li>Dataset: PlantVillage, PlantSeg, or open datasets</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="problem-success"><strong>Evaluation:</strong> Innovation (50%) • Demo (30%) • Code Quality (20%)</p>
+              </div>
+            </details>
+
+            {/* PS5 */}
+            <details className="problem-item">
+              <summary className="problem-summary">
+                <div className="problem-meta">
+                  <span className="problem-number">05</span>
+                  <div className="problem-header-text">
+                    <span className="problem-domain problem-domain--heritage">Cultural Heritage</span>
+                    <h3>Automated Annotation for Indic Manuscripts and Ram Charit Manas</h3>
+                  </div>
+                </div>
+                <span className="problem-chevron" aria-hidden="true">›</span>
+              </summary>
+              <div className="problem-body">
+                <p>Develop methods that produce usable <strong>pre-annotations directly from raw manuscript page images</strong> with minimal supervision — covering layout parsing and text-line/baseline extraction for diverse Indic manuscripts including Ramcharit Manas pages.</p>
+                <div className="problem-cols">
+                  <div>
+                    <h4>Output Tasks</h4>
+                    <ul className="bullets">
+                      <li>Layout regions: text, marginalia, illustrations, page frames, damage/holes</li>
+                      <li>Text-line and baseline extraction</li>
+                      <li>Submission format: PAGE-XML or COCO-style JSON</li>
+                      <li>Weak supervision & semi-supervised learning encouraged</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>Key Rules</h4>
+                    <ul className="bullets">
+                      <li>Train only on officially released Auto-Annotation dataset</li>
+                      <li>No additional manual labeling beyond seed set</li>
+                      <li>External pretrained models allowed with full disclosure</li>
+                      <li>1–3 submissions per team</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4>Evaluation</h4>
+                    <ul className="bullets">
+                      <li><strong>Q</strong> — Annotation Quality (mIoU, PQ, Line F1)</li>
+                      <li><strong>E</strong> — Human Effort Score (seconds/page)</li>
+                      <li><strong>S</strong> = Q × exp(−λE)</li>
+                      <li>Tie-breaker: Hard subset performance, lower effort, faster inference</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="problem-success"><strong>Datasets:</strong> RamCharit-Manas (Archive.org) • Indic Manuscript Dataset (OPenn, UPenn Library)</p>
+              </div>
+            </details>
+
           </div>
         </section>
 

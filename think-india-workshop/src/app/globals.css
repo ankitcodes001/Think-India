@@ -653,6 +653,207 @@ body::after {
   filter: grayscale(0.2);
 }
 
+/* Problem Statements */
+.problems-pdf-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.problems-pdf-label {
+  font-family: var(--font-h);
+  font-weight: 600;
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+
+.problems-pdf-btn {
+  font-size: 0.88rem;
+  padding: 0.55rem 1.25rem;
+  white-space: nowrap;
+}
+
+.problems-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.problem-item {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.problem-item[open] {
+  border-color: rgba(192, 132, 252, 0.35);
+  box-shadow: 0 8px 32px rgba(192, 132, 252, 0.1);
+}
+
+.problem-item[open] .problem-chevron {
+  transform: rotate(90deg);
+}
+
+.problem-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+}
+
+.problem-summary::-webkit-details-marker { display: none; }
+
+.problem-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.problem-number {
+  font-family: var(--font-h);
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: rgba(15, 23, 42, 0.12);
+  flex-shrink: 0;
+  line-height: 1;
+  min-width: 2.5rem;
+}
+
+.problem-item[open] .problem-number {
+  color: rgba(192, 132, 252, 0.5);
+}
+
+.problem-header-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 0;
+}
+
+.problem-header-text h3 {
+  font-family: var(--font-h);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.problem-domain {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 0.2rem 0.65rem;
+  border-radius: 50px;
+  width: fit-content;
+}
+
+.problem-domain--health {
+  background: rgba(56, 189, 248, 0.15);
+  color: #0284c7;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+}
+
+.problem-domain--agri {
+  background: rgba(52, 211, 153, 0.15);
+  color: #059669;
+  border: 1px solid rgba(52, 211, 153, 0.3);
+}
+
+.problem-domain--security {
+  background: rgba(251, 146, 60, 0.15);
+  color: #c2410c;
+  border: 1px solid rgba(251, 146, 60, 0.3);
+}
+
+.problem-domain--heritage {
+  background: rgba(192, 132, 252, 0.15);
+  color: #7c3aed;
+  border: 1px solid rgba(192, 132, 252, 0.3);
+}
+
+.problem-chevron {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+  line-height: 1;
+}
+
+.problem-body {
+  padding: 0 1.5rem 1.75rem;
+  border-top: 1px solid var(--card-border);
+  display: grid;
+  gap: 1.25rem;
+}
+
+.problem-body > p {
+  color: var(--text-muted);
+  line-height: 1.75;
+  font-size: 0.97rem;
+  margin-top: 1.25rem;
+}
+
+.problem-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.problem-cols > div {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 1rem 1.15rem;
+}
+
+.problem-cols h4 {
+  font-family: var(--font-h);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--text-muted);
+  margin-bottom: 0.65rem;
+}
+
+.problem-cols .bullets li {
+  font-size: 0.9rem;
+}
+
+.problem-success {
+  background: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.22);
+  border-radius: 12px;
+  padding: 0.85rem 1.1rem;
+  color: var(--text-main) !important;
+  font-size: 0.93rem !important;
+  line-height: 1.6 !important;
+}
+
+@media (max-width: 768px) {
+  .problem-summary { padding: 1.1rem; }
+  .problem-number { font-size: 1.25rem; min-width: 2rem; }
+  .problem-header-text h3 { font-size: 1rem; }
+  .problem-body { padding: 0 1rem 1.25rem; }
+}
+
 /* Footer */
 footer {
   text-align: center;
